@@ -21,6 +21,17 @@ $email_subject = "Portfolio Website Contact Form:  $name";
 $email_body = "You have received a new message from your website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nMessage:\n$message";
 $headers = "From: noreply@arunpandianm.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
 $headers .= "Reply-To: $email_address";
-mail($to,$email_subject,$email_body,$headers);
+
+//Use this when hosted in official site
+//mail($to,$email_subject,$email_body,$headers);
+
+
+//Use this when hosted in github site
+date_default_timezone_set('India/Chennai');
+$date = date("Y/m/d H:i:s");
+$data = $date . "," . $name . "," . $email_address . "," . $phone . "," . $message;
+$file = "mail.csv";
+file_put_contents($file, $data . PHP_EOL, FILE_APPEND);
+
 return true;
 ?>
