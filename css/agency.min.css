@@ -102,7 +102,15 @@
        .hello{
        font-family:"Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive}
 
-
+       .right{
+         text-align: right;
+       }
+       .left{
+         text-align: left;
+       }
+       .center{
+         align-items: center;
+       }
        /*animation*/
        .animation1,
        .animation2,
